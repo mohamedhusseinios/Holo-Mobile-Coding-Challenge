@@ -51,3 +51,6 @@ app.*.map.json
 .kiro/steering/byterover-rules.md
 .qoder/rules/byterover-rules.md
 .augment/rules/byterover-rules.md
+AGENTS.md
+CLAUDE.md
+task.md
