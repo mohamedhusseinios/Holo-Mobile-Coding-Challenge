@@ -1,7 +1,6 @@
 import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../../../core/utils/result.dart';
 import '../../domain/entities/product.dart';
 import '../../domain/usecases/get_product_detail.dart';
 

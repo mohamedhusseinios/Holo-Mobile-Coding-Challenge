@@ -7,7 +7,6 @@ import 'package:holo_mobile_coding_challenge/features/cart/data/datasources/cart
 import 'package:holo_mobile_coding_challenge/features/cart/data/models/cart_item_dto.dart';
 import 'package:holo_mobile_coding_challenge/features/cart/data/repositories/cart_repository_impl.dart';
 import 'package:holo_mobile_coding_challenge/features/cart/domain/entities/cart_item.dart';
-import 'package:holo_mobile_coding_challenge/features/products/domain/entities/product.dart';
 
 import '../../../../support/test_data.dart';
 

@@ -12,7 +12,6 @@ import 'package:holo_mobile_coding_challenge/features/cart/domain/usecases/get_c
 import 'package:holo_mobile_coding_challenge/features/cart/domain/usecases/remove_cart_item.dart';
 import 'package:holo_mobile_coding_challenge/features/cart/domain/usecases/update_cart_item_quantity.dart';
 import 'package:holo_mobile_coding_challenge/features/cart/presentation/cubit/cart_cubit.dart';
-import 'package:holo_mobile_coding_challenge/features/products/domain/entities/product.dart';
 
 import '../../../../support/test_data.dart';
 
