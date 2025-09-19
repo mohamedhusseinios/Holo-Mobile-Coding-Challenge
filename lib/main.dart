@@ -14,12 +14,8 @@ import 'features/cart/presentation/cubit/cart_cubit.dart';
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await initDependencies();
-  final storage = await _buildHydratedStorage();
-
-  HydratedBlocOverrides.runZoned(
-    () => runApp(const AppBootstrap()),
-    storage: storage,
-  );
+  HydratedBloc.storage = await _buildHydratedStorage();
+  runApp(const AppBootstrap());
 }
 
 Future<HydratedStorage> _buildHydratedStorage() async {
@@ -40,9 +36,7 @@ class AppBootstrap extends StatelessWidget {
     return MultiBlocProvider(
       providers: [
         BlocProvider<ThemeCubit>(create: (_) => sl<ThemeCubit>()),
-        BlocProvider<CartCubit>(
-          create: (_) => sl<CartCubit>()..loadCart(),
-        ),
+        BlocProvider<CartCubit>(create: (_) => sl<CartCubit>()..loadCart()),
       ],
       child: HoloApp(),
     );

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../features/cart/presentation/pages/cart_page.dart';
+import '../../features/products/domain/entities/product.dart';
 import '../../features/products/presentation/pages/product_detail_page.dart';
 import '../../features/products/presentation/pages/product_list_page.dart';
 
@@ -13,9 +14,8 @@ class AppRouter {
       GoRoute(
         name: ProductListPage.routeName,
         path: '/',
-        pageBuilder: (context, state) => const NoTransitionPage(
-          child: ProductListPage(),
-        ),
+        pageBuilder: (context, state) =>
+            const NoTransitionPage(child: ProductListPage()),
         routes: [
           GoRoute(
             name: ProductDetailPage.routeName,
@@ -26,19 +26,23 @@ class AppRouter {
               if (id == null) {
                 return const NoTransitionPage(child: ProductListPage());
               }
+              final seedProduct = state.extra is Product
+                  ? state.extra as Product
+                  : null;
               return MaterialPage(
                 key: state.pageKey,
-                child: ProductDetailPage(productId: id),
+                child: ProductDetailPage(
+                  productId: id,
+                  seedProduct: seedProduct,
+                ),
               );
             },
           ),
           GoRoute(
             name: CartPage.routeName,
             path: 'cart',
-            pageBuilder: (context, state) => MaterialPage(
-              key: state.pageKey,
-              child: const CartPage(),
-            ),
+            pageBuilder: (context, state) =>
+                MaterialPage(key: state.pageKey, child: const CartPage()),
           ),
         ],
       ),

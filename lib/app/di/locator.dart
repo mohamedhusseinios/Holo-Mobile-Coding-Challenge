@@ -35,7 +35,6 @@ Future<void> initDependencies() async {
     ..registerLazySingleton(
       () => SharedPreferencesStorage(prefs: sl<SharedPreferences>()),
     )
-
     // Product
     ..registerLazySingleton<ProductRemoteDataSource>(
       () => ProductRemoteDataSourceImpl(sl()),
@@ -52,7 +51,6 @@ Future<void> initDependencies() async {
     )
     ..registerLazySingleton(() => GetProducts(sl()))
     ..registerLazySingleton(() => GetProductDetail(sl()))
-
     // Cart
     ..registerLazySingleton<CartLocalDataSource>(
       () => CartLocalDataSourceImpl(sl()),
@@ -65,7 +63,6 @@ Future<void> initDependencies() async {
     ..registerLazySingleton(() => UpdateCartItemQuantity(sl()))
     ..registerLazySingleton(() => RemoveCartItem(sl()))
     ..registerLazySingleton(() => ClearCart(sl()))
-
     // Cubits
     ..registerFactory(() => ThemeCubit())
     ..registerFactory(

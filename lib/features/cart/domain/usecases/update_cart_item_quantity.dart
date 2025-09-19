@@ -16,7 +16,10 @@ class UpdateCartItemQuantity
 }
 
 class UpdateCartItemQuantityParams {
-  const UpdateCartItemQuantityParams({required this.productId, required this.quantity});
+  const UpdateCartItemQuantityParams({
+    required this.productId,
+    required this.quantity,
+  });
 
   final int productId;
   final int quantity;

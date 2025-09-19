@@ -11,10 +11,7 @@ class AddToCart extends UseCase<List<CartItem>, AddToCartParams> {
 
   @override
   ResultFuture<List<CartItem>> call(AddToCartParams params) {
-    return _repository.addItem(
-      params.product,
-      quantity: params.quantity,
-    );
+    return _repository.addItem(params.product, quantity: params.quantity);
   }
 }
 

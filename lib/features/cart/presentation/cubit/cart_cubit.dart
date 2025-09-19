@@ -55,12 +55,12 @@ class CartCubit extends Cubit<CartState> {
     required UpdateCartItemQuantity updateQuantity,
     required RemoveCartItem removeCartItem,
     required ClearCart clearCart,
-  })  : _getCart = getCart,
-        _addToCart = addToCart,
-        _updateQuantity = updateQuantity,
-        _removeCartItem = removeCartItem,
-        _clearCart = clearCart,
-        super(const CartState());
+  }) : _getCart = getCart,
+       _addToCart = addToCart,
+       _updateQuantity = updateQuantity,
+       _removeCartItem = removeCartItem,
+       _clearCart = clearCart,
+       super(const CartState());
 
   final GetCart _getCart;
   final AddToCart _addToCart;
@@ -134,10 +134,7 @@ class CartCubit extends Cubit<CartState> {
       },
       failure: (failure) {
         emit(
-          state.copyWith(
-            status: CartStatus.failure,
-            message: failure.message,
-          ),
+          state.copyWith(status: CartStatus.failure, message: failure.message),
         );
       },
     );

@@ -37,9 +37,20 @@ class ProductDetailState extends Equatable {
 }
 
 class ProductDetailCubit extends Cubit<ProductDetailState> {
-  ProductDetailCubit(this._getProductDetail) : super(const ProductDetailState());
+  ProductDetailCubit(this._getProductDetail)
+    : super(const ProductDetailState());
 
   final GetProductDetail _getProductDetail;
+
+  void seed(Product product) {
+    emit(
+      state.copyWith(
+        status: ProductDetailStatus.success,
+        product: product,
+        message: null,
+      ),
+    );
+  }
 
   Future<void> fetchProduct(int id) async {
     emit(state.copyWith(status: ProductDetailStatus.loading));

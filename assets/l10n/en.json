@@ -1,0 +1,22 @@
+{
+  "appTitle": "Holo Store",
+  "productsTitle": "Discover",
+  "genericError": "Something went wrong. Please try again.",
+  "retry": "Retry",
+  "emptyProducts": "We couldn’t find any products right now.",
+  "toggleTheme": "Toggle theme",
+  "cartTitle": "Cart",
+  "addToCart": "Add",
+  "productDetails": "Product details",
+  "productUnavailable": "This product is not available offline yet.",
+  "description": "Description",
+  "addedToCart": "Added to cart",
+  "clearCart": "Clear",
+  "emptyCart": "Your cart is empty.",
+  "decrease": "Decrease quantity",
+  "increase": "Increase quantity",
+  "remove": "Remove",
+  "total": "Total",
+  "checkout": "Checkout",
+  "checkoutPlaceholder": "Checkout flow not implemented yet."
+}

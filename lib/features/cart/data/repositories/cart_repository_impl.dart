@@ -8,7 +8,7 @@ import '../models/cart_item_dto.dart';
 
 class CartRepositoryImpl implements CartRepository {
   CartRepositoryImpl({required CartLocalDataSource localDataSource})
-      : _localDataSource = localDataSource;
+    : _localDataSource = localDataSource;
 
   final CartLocalDataSource _localDataSource;
 
@@ -25,7 +25,10 @@ class CartRepositoryImpl implements CartRepository {
   }
 
   @override
-  ResultFuture<List<CartItem>> addItem(Product product, {int quantity = 1}) async {
+  ResultFuture<List<CartItem>> addItem(
+    Product product, {
+    int quantity = 1,
+  }) async {
     try {
       final items = _localDataSource.readCart();
       final index = items.indexWhere((item) => item.product.id == product.id);
@@ -51,14 +54,15 @@ class CartRepositoryImpl implements CartRepository {
   }
 
   @override
-  ResultFuture<List<CartItem>> updateQuantity(int productId, int quantity) async {
+  ResultFuture<List<CartItem>> updateQuantity(
+    int productId,
+    int quantity,
+  ) async {
     try {
       final items = _localDataSource.readCart();
       final index = items.indexWhere((item) => item.product.id == productId);
       if (index == -1) {
-        return const FailureResult(
-          Failure(message: 'Item not found in cart'),
-        );
+        return const FailureResult(Failure(message: 'Item not found in cart'));
       }
       if (quantity <= 0) {
         items.removeAt(index);

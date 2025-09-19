@@ -24,7 +24,7 @@ class HoloApp extends StatelessWidget {
           themeMode: themeMode,
           routerConfig: _router.router,
           supportedLocales: AppLocalizations.supportedLocales,
-          localizationsDelegates: const AppLocalizations.localizationsDelegates,
+          localizationsDelegates: AppLocalizations.localizationsDelegates,
         );
       },
     );

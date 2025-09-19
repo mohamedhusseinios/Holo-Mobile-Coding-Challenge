@@ -13,17 +13,15 @@ class CartItemDto {
   factory CartItemDto.fromJson(JsonMap json) => _$CartItemDtoFromJson(json);
 
   factory CartItemDto.fromDomain(CartItem item) => CartItemDto(
-        product: ProductDto.fromDomain(item.product),
-        quantity: item.quantity,
-      );
+    product: ProductDto.fromDomain(item.product),
+    quantity: item.quantity,
+  );
 
   final ProductDto product;
   final int quantity;
 
   JsonMap toJson() => _$CartItemDtoToJson(this);
 
-  CartItem toDomain() => CartItem(
-        product: product.toDomain(),
-        quantity: quantity,
-      );
+  CartItem toDomain() =>
+      CartItem(product: product.toDomain(), quantity: quantity);
 }

@@ -13,9 +13,9 @@ class ProductRepositoryImpl implements ProductRepository {
     required ProductRemoteDataSource remoteDataSource,
     required ProductLocalDataSource localDataSource,
     required ConnectivityService connectivityService,
-  })  : _remoteDataSource = remoteDataSource,
-        _localDataSource = localDataSource,
-        _connectivityService = connectivityService;
+  }) : _remoteDataSource = remoteDataSource,
+       _localDataSource = localDataSource,
+       _connectivityService = connectivityService;
 
   final ProductRemoteDataSource _remoteDataSource;
   final ProductLocalDataSource _localDataSource;
@@ -34,10 +34,7 @@ class ProductRepositoryImpl implements ProductRepository {
         return Success(cached.map((dto) => dto.toDomain()).toList());
       }
       return FailureResult(
-        Failure(
-          message: _mapErrorMessage(error),
-          cause: error,
-        ),
+        Failure(message: _mapErrorMessage(error), cause: error),
       );
     } catch (error) {
       return FailureResult(

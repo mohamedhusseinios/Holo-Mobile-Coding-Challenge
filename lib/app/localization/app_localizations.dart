@@ -30,8 +30,9 @@ class AppLocalizations {
   }
 
   Future<void> load() async {
-    final jsonString = await rootBundle
-        .loadString('assets/l10n/${locale.languageCode}.json');
+    final jsonString = await rootBundle.loadString(
+      'assets/l10n/${locale.languageCode}.json',
+    );
     final Map<String, dynamic> jsonMap = json.decode(jsonString);
     _localizedStrings = jsonMap.map(
       (key, value) => MapEntry(key, value.toString()),
@@ -47,8 +48,9 @@ class _AppLocalizationsDelegate
 
   @override
   bool isSupported(Locale locale) {
-    return AppLocalizations.supportedLocales
-        .any((supported) => supported.languageCode == locale.languageCode);
+    return AppLocalizations.supportedLocales.any(
+      (supported) => supported.languageCode == locale.languageCode,
+    );
   }
 
   @override

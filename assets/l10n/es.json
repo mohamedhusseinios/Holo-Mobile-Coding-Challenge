@@ -1,0 +1,22 @@
+{
+  "appTitle": "Holo Store",
+  "productsTitle": "Descubrir",
+  "genericError": "Algo salió mal. Inténtalo de nuevo.",
+  "retry": "Reintentar",
+  "emptyProducts": "No encontramos productos en este momento.",
+  "toggleTheme": "Cambiar tema",
+  "cartTitle": "Carrito",
+  "addToCart": "Añadir",
+  "productDetails": "Detalles del producto",
+  "productUnavailable": "Este producto no está disponible sin conexión todavía.",
+  "description": "Descripción",
+  "addedToCart": "Añadido al carrito",
+  "clearCart": "Vaciar",
+  "emptyCart": "Tu carrito está vacío.",
+  "decrease": "Reducir cantidad",
+  "increase": "Aumentar cantidad",
+  "remove": "Eliminar",
+  "total": "Total",
+  "checkout": "Pagar",
+  "checkoutPlaceholder": "El flujo de pago aún no está implementado."
+}
